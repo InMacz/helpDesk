@@ -6,6 +6,10 @@ public class Categorias {
 	private String nome;
 	private String descricao;
 	private boolean ativo;
+
+	public Categorias(){
+
+	}
 	
 	public Categorias(int id, String nome, String descricao, boolean ativo) {
 		super();

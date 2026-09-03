@@ -4,6 +4,17 @@
   <artifactId>HelpDesk</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+
+  <dependencies>
+    <!-- Dependência do Servlet para Java moderno (Tomcat 10 ou superior) -->
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>6.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
   <build>
     <plugins>
       <plugin>
