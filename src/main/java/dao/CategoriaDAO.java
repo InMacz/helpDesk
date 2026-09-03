@@ -80,3 +80,4 @@ public class CategoriaDAO {
 	
 
 }
+//testando commit
