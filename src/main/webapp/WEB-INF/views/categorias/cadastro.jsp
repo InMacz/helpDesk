@@ -12,7 +12,7 @@
   </head>
   <body>
   <h1>Nova Categoria</h1>
-  <form action="${pageContext.request.contextPath}/SalvarCategoriaServlet" method="post">
+  <form action="${pageContext.request.contextPath}/categorias/SalvarCategoriasServlet" method="post">
 
 
     <label>Nome:</label>
