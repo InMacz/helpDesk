@@ -5,12 +5,15 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Categorias;
+import dao.CategoriaDAO;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet("/SalvarCategoriaServlet")
 public class SalvarCategoriaServlet extends HttpServlet {
+    private CategoriaDAO categoriaDAO = new CategoriaDAO();
 
     @Override
     protected void doPost(jakarta.servlet.http.HttpServletRequest request, jakarta.servlet.http.HttpServletResponse response)
@@ -26,7 +29,7 @@ public class SalvarCategoriaServlet extends HttpServlet {
             categoriaDAO.salvar(cat);
             response.sendRedirect(request.getContextPath() + "/categorias");
         }catch (SQLException e ){
-            throws new ServletException("Erro ao salvar categoria", e);
+            throw new ServletException("Erro ao salvar categoria", e);
         }
 
         response.getWriter().println("Olá, Servlet!");

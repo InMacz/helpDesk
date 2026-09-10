@@ -64,7 +64,7 @@ public class CategoriaDAO {
 		String sqlLocalizar = "select * from categorias where id = ?";
 		Categorias categoria = new Categorias();
 		try (
-				Connection conexao = Conexao.obterConexao(),
+				Connection conexao = Conexao.obterConexao();
 				PreparedStatement comando=conexao.prepareStatement(sqlLocalizar)){
 
 			comando.setInt(1, id);

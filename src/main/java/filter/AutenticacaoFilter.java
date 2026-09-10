@@ -2,9 +2,9 @@ package filter;
 
 import java.io.IOException;
 
-import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.*;
+import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.http.*;
 
 @WebFilter("/*")
 public class AutenticacaoFilter implements Filter {
