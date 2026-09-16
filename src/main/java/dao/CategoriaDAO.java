@@ -69,13 +69,13 @@ public class CategoriaDAO {
 
 			comando.setInt(1, id);
 
-			ResultSet resultado = comando.executeQuery();
-
-			while (resultado.next()) {
-				categoria.setId(resultado.getInt("id"));
-				categoria.setNome(resultado.getString("nome"));
-				categoria.setDescricao(resultado.getString("descricao"));
-				categoria.setAtivo(resultado.getBoolean("ativo"));
+			try (ResultSet resultado = comando.executeQuery()) {
+				while (resultado.next()) {
+					categoria.setId(resultado.getInt("id"));
+					categoria.setNome(resultado.getString("nome"));
+					categoria.setDescricao(resultado.getString("descricao"));
+					categoria.setAtivo(resultado.getBoolean("ativo"));
+				}
 			}
 		}
 		return categoria;
@@ -91,9 +91,10 @@ public class CategoriaDAO {
 			 ResultSet resultado = comando.executeQuery()) {
 			while (resultado.next()) {
 				Categorias cat = new Categorias();
-				cat.setId(resultado.getInt(0));
+				cat.setId(resultado.getInt("id"));
 				cat.setNome(resultado.getString("nome"));
 				cat.setDescricao(resultado.getString("descricao"));
+				cat.setAtivo(true);
 				lista.add(cat);
 			}
 

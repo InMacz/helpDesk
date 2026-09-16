@@ -16,7 +16,7 @@ public class SalvarCategoriaServlet extends HttpServlet {
     private CategoriaDAO categoriaDAO = new CategoriaDAO();
 
     @Override
-    protected void doPost(jakarta.servlet.http.HttpServletRequest request, jakarta.servlet.http.HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nome = request.getParameter("txtNome");
         String descricao = request.getParameter("txtDescricao");
@@ -31,7 +31,5 @@ public class SalvarCategoriaServlet extends HttpServlet {
         }catch (SQLException e ){
             throw new ServletException("Erro ao salvar categoria", e);
         }
-
-        response.getWriter().println("Olá, Servlet!");
     }
 }

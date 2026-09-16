@@ -15,7 +15,7 @@ public class  Usuario {
 	private boolean ativo;
 	private Date data_cadastro;
 	
-	private Usuario() {
+	public Usuario() {
 		
 	}
 	
